@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>roseonly官网</title>
+    <link rel="stylesheet" href="../style/public2.css">
+    <link rel="stylesheet" href="../style/public.css">
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/lunbo.css">
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../js/lunbo.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+        <!--  -->
+        <div class="head">
+            <!-- left -->
+            <div class="div_lang"><label>CN</label>
+                <ul>
+                    <li class="cn"><a href="index.html">CN</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="roseonly-logo" id="tag_roseonly"></a>
+            <!-- right -->
+            <ul class="right">
+                <!-- 登录/注册 -->
+                <li class="right_dlzc">
+                    <div class="h_dlzc"></div>
+                    <div class="header_toplogin_con">
+                        <div class="header_toplogin">
+                            <div>
+                                <div class="header_dlzc">
+                                    <a href="https://orders.roseonly.com.cn/pcEntrance/tologin" class="unlogin"
+                                        rel="nofollow">
+                                        <span id="h_font" class="h_font">登录</span>
+                                    </a>
+                                    <span class="h_line">|</span>
+                                    <a href="https://orders.roseonly.com.cn/pcEntrance/toreg" class="unlogin zc_flr "
+                                        rel="nofollow">
+                                        <span id="h_font" class="h_font">注册</span>
+                                    </a>
+                                    <a style="display:none" href="https://orders.roseonly.com.cn/userOrders"
+                                        class="login">
+                                        <span class="h_font">个人中心</span>
+                                    </a>
+                                    <a style="display:none" href="javascript:void(0)" onclick="logout();"
+                                        class="login zc_flr">
+                                        <span class="h_font">退出</span>
+                                    </a>
+                                </div>
+                                <dl class="top_ewm">
+                                    <dt></dt>
+                                    <dd>
+                                        <h1>立即领取 50元 优惠券</h1>
+                                        <p> 微信关注roseonly诺誓商城,<br>
+                                            激活成为会员即可领取,<br>
+                                            更多会员专享活动等你参与！
+                                        </p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="h_dlzc_line"></li>
+                <!-- 购物车 -->
+                <li class="h_right-shop">
+                    <a href="购物车" class="right-shop" rel="nofollow"></a>
+                </li>
+                <!-- 购物车商品数量 -->
+                <li id="cartNum" class="cartNum">(0)</li>
+                <li class="h_dlzc_line"></li>
+                <!-- 地址 -->
+                <li style="float:right"><a href="地址" target="_blank" class="std"></a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- 头部结束 -->
+
+    <!-- logo -->
+    <div class="logo-container">
+        <a href="index.html" class="logo_nbtn"></a>
+    </div>
+    <!-- logo结束 -->
+
+    <!-- 导航栏 开始-->
+    <div class="nav-container" id="topmenus">
+        <div class="nav-bar">
+            <ul id="nav" class="cl-effect-1">
+                <li><a href="" class="topmenu_1">新品上市</a></li>
+                <li><a href="" class="topmenu_1">爱礼推荐</a></li>
+                <li><a href="" class="topmenu_1">鲜花玫瑰</a></li>
+                <li><a href="" class="topmenu_1">永生玫瑰</a></li>
+                <li><a href="" class="topmenu_1">玫瑰珠宝</a></li>
+                <li><a href="" class="topmenu_1">玫瑰首饰</a></li>
+                <li><a href="" class="topmenu_1">玫瑰家具</a></li>
+                <li><a href="" class="topmenu_1">高端定制</a></li>
+                <li><a href="" class="topmenu_1">诺誓世界</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏结束 -->
+    <div class="main_top"></div>
+    <!-- container 开始-->
+    <div class="container">
+        <!-- 轮播图 -->
+        <div class="main_view">
+            <script>
+                $(function () {
+                    $('#slider').slider();
+                });
+            </script>
+            <div id="slider">
+                <div>
+                    <img src="../img/lunbo/lunbo1.jpg" alt="">
+                    <img src="../img/lunbo/lunbo2.jpg" alt="">
+                    <img src="../img/lunbo/lunbo3.jpg" alt="">
+                    <img src="../img/lunbo/lunbo4.jpg" alt="">
+                    <img src="../img/lunbo/lunbo5.png" alt="">
+                    <img src="../img/lunbo/lunbo6.png" alt="">
+                </div>
+                <span><b>&lt;</b></span>
+                <span><b>&gt;</b></span>
+            </div>
+        </div>
+        <!-- 轮播结束 -->
+        <!-- 品牌推荐 -->
+        <div class="brand">
+            <ul class="ul">
+                <li style="margin:10px 0;">
+                    <a href=""><img src="../img/index/brand1.jpg" alt=""></a>
+                    <img src="../img/index/brand2.jpg" alt="">
+                    <a href=""><img src="../img/index/brand3.jpg" alt=""></a>
+                </li>
+                <li><a href=""><img src="../img/index/brand4.jpg" alt=""></a></li>
+            </ul>
+            <ul class="ul">
+                <li><a href=""><img src="../img/index/yonghengzhenai.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jingdianyongxu.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jingdianyongxu2.jpg" alt=""></a></li>
+            </ul>
+            <ul class="ul">
+                <li><a href=""><img src="../img/index/dangyuexingzuo.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/mingxingtongkuan.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/xinxinxiangxi.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/hunlitongkuan.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/hunlitongkuan2.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguigongzai.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/quanshiai.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jingdianyongxu3.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jewelry.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/shengchenshi.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/lock.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguisanxiang.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguixiangfen.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguishipin.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/gaoduandingzhi.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/giftcard.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <!-- 品牌结束 -->
+    </div>
+    <!-- container 结束-->
+
+    <!-- footer 开始 -->
+    <footer class="footer">
+        <div class="footer_box">
+            <ul>
+                <p>新手指南</p>
+                <li><a href="" target="_blank">购物流程</a></li>
+                <li><a href="" target="_blank">会员尊享</a></li>
+                <li><a href="" target="_blank">常见问题</a></li>
+                <li><a href="" target="_blank">指圈测量</a></li>
+            </ul>
+            <ul>
+                <p>物流配送</p>
+                <li><a href="" target="_blank">配送方式</a></li>
+                <li><a href="" target="_blank">配送服务</a></li>
+            </ul>
+            <ul>
+                <p>售后服务</p>
+                <li><a href="" target="_blank">退款说明</a></li>
+                <li><a href="" target="_blank">保养物语</a></li>
+            </ul>
+            <ul>
+                <p>关于我们</p>
+                <li><a href="" target="_blank">品牌介绍</a></li>
+                <li><a href="" target="_blank">销售渠道</a></li>
+                <li><a href="" target="_blank">联系我们</a></li>
+                <li><a href="" target="_blank">加入我们</a></li>
+            </ul>
+            <ul>
+                <p>关注我们</p>
+                <li class="f_weixin"><a href="" target="_blank">微信</a></li>
+                <li class="f_weibo"><a href="" target="_blank">微博</a></li>
+            </ul>
+            <dl class="new_r">
+                <dt></dt>
+                <dd>
+                    <p>微信关注roseonly <br>激活会员，立即领取</p>
+                    <h2>50元优惠券</h2>
+                    <div></div>
+                </dd>
+            </dl>
+            <div class="footer-yyzz" style="display:none;">
+                <a href="" target="_blank">营业执照</a>
+                <a href="" target="_blank">食品证副本</a>
+            </div>
+        </div>
+        <div class="foot-nav">
+            京ICP备13007738号 京公网安备11010502023922<br>诺誓（北京）商业股份有限公司
+        </div>
+    </footer>
+    <!-- footer 结束 -->
+</body>
+
+</html>

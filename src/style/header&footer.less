@@ -1,0 +1,130 @@
+@charset 'utf-8';
+
+*{
+    padding:0;
+    margin: 0;
+}
+// 头部
+.head {
+    width: 1240px;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    background: #414141;
+    // left
+    >.div_lang{
+        background: url(../img/index/caidan.png) no-repeat;
+        
+        >label{
+            background: url(../img/index/China.png) no-repeat;
+        }
+        >ul{
+            display: none;
+        }
+    }
+    .roseonly-logo {
+        width: 128px;
+        height: 40px;
+        display: block;
+        background-image: url(../img/index/logo.svg);
+        background-size: 128px 44px;
+        position: absolute;
+        left: 94px;
+        background-color: #414141;
+        z-index: 1;
+    }
+    >.right {
+        font-size: 12px;
+        margin-top: 40px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 117px;
+        height: 40px;
+    }
+}
+// 头部结束
+
+
+// footer 开始
+.footer_box {
+    position: relative;
+    width: 1240px;
+    margin: 0 auto;
+    height: 210px;
+    padding-top: 50px;
+    >ul {
+        margin-top: 0;
+        float: left;
+        padding: 0 66px;
+        text-align: center;
+        >p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            margin-top: 0;
+        }
+        >li {
+            list-style: none;
+            line-height: 30px;
+            color: #000;
+            text-align: left;
+            margin-left: 1px;
+            >a {
+                color: #afafaf;
+                font-size: 14px;
+            }
+        }
+        .f_weixin {
+            background: url(../img/index/weixin.png) no-repeat right;
+        }
+        .f_weibo {
+            background: url(../img/index/weibo.jpg) no-repeat right;
+        }
+    }
+    >.new_r {
+        float: right;
+        >dt {
+            float: left;
+            margin-right: 25px;
+            width: 102px;
+            height: 101px;
+            background: url(../img/index/erweima.jpg);
+            background-size: 100%;
+        }
+        >dd {
+            float: left;
+            color: #afafaf;
+            font-size: 12px;
+            line-height: 22px;
+        }
+    }
+    >.footer-yyzz{
+        display: block !important;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 240px;
+        color: #fff;
+        font-size: 12px;
+        text-align: right;
+        >a {
+            margin-left: 15px;
+            padding-left: 15px;
+            background: url(../img/index/zheng.png) no-repeat left center;
+            background-size: auto 80%;
+            font-size: 12px;
+            color: #afafaf;
+        }
+    }
+}
+&.foot-nav {
+    width: 1240px;
+    height: 58px;
+    font-size: 14px;
+    background: #414141;
+    color: #afafaf;
+    clear: both;
+    text-align: right;
+    margin: 0 auto;
+    font-size: 12px;
+}
