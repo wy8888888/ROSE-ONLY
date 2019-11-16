@@ -39,6 +39,29 @@
   width: 117px;
   height: 40px;
 }
+.logo-container {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  position: relative;
+  background: #414141;
+  box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.5);
+  min-width: 1240px;
+}
+.logo-container > .logo_nbtn {
+  width: 143px;
+  height: 80px;
+  margin: 0 auto;
+  display: block;
+  background-image: url(../img/index/index-logo.png);
+}
+.main_top {
+  width: 100%;
+  height: 360px;
+  position: absolute;
+}
 .footer_box {
   position: relative;
   width: 1240px;
