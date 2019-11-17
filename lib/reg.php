@@ -2,20 +2,12 @@
     // 1. 连接数据库
     include('./conn.php');
 
-    // 业务逻辑
-    // 1. 连接数据库
-    // 2. 接收数据
-    // 3. 验证数据
-    // 4. 根据验证结果进行操作 插入/提示
-
     // 2. 接收数据
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
-    $email = $_REQUEST['email'];
-    $phone = $_REQUEST['phone'];
 
     // 3. 验证数据  判断用户名是否存在
-    $sql = "select * from users where user_name='$username'";
+    $sql = "select * from user where user_name='$username'";
     $result = $mysqli->query($sql); //执行查询语句
 
     if($result->num_rows>0){
@@ -25,7 +17,7 @@
         die;
     }
 
-    $insertSql = "insert into users(user_name,user_password,user_email,user_phone) values('$username','$password','$email','$phone')";
+    $insertSql = "insert into user(username,userpass) values('$username','$password')";
 
     // 当使用query函数执行插入操作的时候  返回的是插入的行数
     $res = $mysqli->query($insertSql);

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="../style/public.css">
+    <link rel="stylesheet" href="../style/product.css">
+    <script src="../../node_modules/jquery/dist/jquery.js" data-main="../js/main.product"></script>
+</head>
+
+<body>
+    <!-- top -->
+    <script src="../js/lib/top.js"></script>
+    <!-- container -->
+    <div class="container">
+        <div class="contain_details">
+            <!--轮播图-->
+            <div class="main_jewel">
+                <div class="jewel_window">
+                    <div class="image_reel1">
+                        <img id="detail_main_img" style="width: 350px;height: 350px;"
+                            src="https://www.roseonly.com.cn/upload/products/14975070890074624.png" border="0"
+                            alt="roseonly诺誓 花篮-情动" title="花篮-情动">
+                    </div>
+                </div>
+
+                <div class="jewel_paging">
+                    <div class="f1" style="float:left"></div>
+                    <a href="javascript:;" rel="1" class="img_selected"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070890074624_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070890074624.png"></a>
+                    <a href="javascript:;" rel="2"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070891799813_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070891799813.png"></a>
+                    <a href="javascript:;" rel="3"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070893682888_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070893682888.png"></a>
+                    <a href="javascript:;" rel="4"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070895406016_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070895406016.png"></a>
+                    <div class="fr"></div>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    mainImg = $('#detail_main_img');
+                    detailImg = $('.detail_img');
+                    selected = $('.jewel_paging>a');
+
+                    // 遍历小图
+                    for (var i = 0; i < detailImg.length; i++) {
+                        var imgOne = detailImg[i];
+                        imgOne.onmouseover = function () {
+                            mainImg[0].src = this.src;
+                        }
+                    }
+                    detailImg.on('mouseover', function () {
+                        $('.jewel_paging>a').removeClass('img_selected');
+                        $(this).parent().addClass('img_selected');
+                    });
+                }); 
+            </script>
+            <!--轮播图 end-->
+            <div class="details_num1_right">
+                <div class="right_tit">爱在满怀 - 花篮圆桶情动&nbsp;25支</div>
+
+                <div class="right_pay"><span>价格 :</span>
+                    ¥1999
+                </div>
+
+                <div class="right_select">
+                    <span class="right_font_tit">数量：</span>
+                    <input type="text" value="1" class="right_number" maxlength="2">
+                    <div class="right_u_d">
+                        <a href="javascript:void(0);" class="right_up"></a>
+                        <a href="javascript:void(0);" class="right_down"></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <a href="javascript:tobuy(3949);" class="button_bar1 unsold btn_buy" name="for99clickToBuy">立即购买</a>
+                <a href="javascript:tocart(3949);" class="button_bar2 unsold btn_buy" name="for99clickToCar">加入购物车</a>
+                <a href="javascript:;" class="button_bar1" id="soldText" style="display:none"></a>
+
+                <!-- Baidu Button END -->
+                <div class="clear"></div>
+                <div class="fwcn_txt">服务承诺：官方正品&nbsp;&nbsp;&nbsp;免邮配送&nbsp;&nbsp;&nbsp;同城速递</div>
+            </div>
+
+            <!-- 产品参数 -->
+            <div class="div_details xq_description">
+                <h1>产品参数</h1>
+                <div class="xq_description_left">
+                    <p><b>适用场景：</b><span>表白、纪念日</span></p>
+                    <p><b>适用对象：</b><span>女朋友</span></p>
+                    <p><b>适用节日：</b><span>情人节、520表白日、七夕节</span></p>
+                </div>
+                <div class="xq_description_left">
+                    <p><b>鲜花朵数：</b><span>25支</span></p>
+                    <p><b>颜色分类：</b><span>情动</span></p>
+                    <p><b>产品规格：</b><span>直径170*高155mm</span></p>
+                </div>
+            </div>
+
+
+
+            <div><img src="https://www.roseonly.com.cn/assets/roseonly/images/xq_08.png"></div>
+            <!--详情图文信息-->
+
+
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/14975070887045553.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/14975070887491804.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/15609321213823713.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/14975070888588981.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/15040785777329083.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/14975070889613538.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/14975070889849755.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+
+
+            <!--<div class="wxts"><img src="https://www.roseonly.com.cn/upload/syspic_new/14823775491713298.jpg"></div>-->
+            <!--详情图文信息end-->
+
+
+        </div>
+    </div>
+    <!-- footer -->
+    <script src="../js/lib/footer.js"></script>
+</body>
+
+</html>

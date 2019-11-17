@@ -13,3 +13,100 @@
 .ul li {
   float: left;
 }
+.series {
+  width: 1240px;
+  height: 95px;
+  line-height: 42px;
+  margin: 10px 0;
+  padding: 15px;
+  background: no-repeat scroll 0 0;
+  color: #fff;
+  text-align: center;
+}
+.rose_select {
+  line-height: 20px;
+  font-size: 14px;
+  color: #414141;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  border-top: solid 1px #414141;
+  border-bottom: solid 1px #414141;
+  position: relative;
+}
+.rose_select a {
+  color: #414141;
+  display: inline-block;
+  width: 57px;
+  margin: 0 30px;
+  text-align: center;
+  height: 30px;
+}
+.rose_select .sort_add {
+  border-bottom: solid 9px #414141;
+  font-weight: bold;
+}
+.rose_select #pay {
+  color: #414141;
+  display: inline-block;
+  width: 57px;
+  margin: 0 30px;
+  text-align: center;
+  background: url(../img/index/select_tb05.png) no-repeat 100% 18%;
+}
+.rose_select_input {
+  width: 200px;
+  height: 29px;
+  margin: 5px 10px;
+  display: inline-block;
+  border: solid 1px #b3b3b3;
+  color: #000;
+  font-size: 14px;
+  text-indent: 5px;
+  outline: none;
+}
+.rose_select_span {
+  display: inline-block;
+  text-align: center;
+  color: #b3b3b3;
+}
+.ul {
+  width: 1240px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 500px;
+}
+.ul > li {
+  width: 310px;
+  height: 415px;
+  float: left;
+  color: #000;
+  text-align: center;
+  position: relative;
+}
+.ul > li .li_img {
+  width: 260px;
+  height: 260px;
+  margin: 24px auto;
+}
+.ul > li .li_img img {
+  width: 260px;
+  height: 260px;
+}
+.ul > li p {
+  line-height: 28px;
+}
+.ul > li a {
+  color: #000;
+}
+.ul > li .f14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+.ul > li .f12 {
+  font-size: 12px;
+}
+.ul li:hover {
+  background-color: rgba(66, 66, 66, 0.1);
+  transition: all 0.8s ease-in-out;
+}

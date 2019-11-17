@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>roseonly官网</title>
+    <link rel="stylesheet" href="../style/public.css">
+    <link rel="stylesheet" href="../style/comm.css">
+    <link rel="stylesheet" href="../style/index.css">
+    <script src="../../node_modules/jquery/dist/jquery.js" data-main="../js/main.index.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .list {
+            list-style: none;
+            overflow: hidden;
+            margin: 50px;
+        }
+
+        .list>.item {
+            float: left;
+            width: 250px;
+            margin: 20px;
+            transition: margin-top .3s;
+        }
+
+        .p-price {
+            color: red;
+        }
+
+        .p-price>.yuan {
+            font-size: 14px;
+        }
+
+        .list>.item>a {
+            text-decoration: none;
+            display: block;
+        }
+
+        .list>.item:hover {
+            box-shadow: 3px 3px 3px #ccc;
+            margin-top: 17px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!-- top -->
+    <script type="text/javascript"  src="../js/lib/top.js"></script>
+    <!-- container -->
+    <div class="container">
+        <div class="series"
+            style="background: url(../img/series/s1.jpg) no-repeat scroll 0 0;background-size:100% 100%;">
+        </div>
+        <div class="rose_select">
+            <a href="javascript:;" id="initpage" class="sort sort_add">综合</a>
+            <a href="javascript:;" id="salenum" class="sort">销量</a>
+            <a href="javascript:;" id="newest" class="sort">最新</a>
+            <a href="javascript:;" id="pay" data-flag="1" class="sort1">价格</a>
+
+            <input class="rose_select_input sortprice" value="" id="minprice" min="0" placeholder="¥" type="number">
+            <span class="rose_select_span">—</span>
+            <input class="rose_select_input sortprice" value="" id="maxprice" min="0" placeholder="¥" type="number">
+        </div>
+        <ul class="ul" id="productList">
+            <li>
+                <a href="./product.html?id=">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <ul class="list">
+        <!-- <li class="item">
+            <a href="product.html?id=1">
+                <div class="p-pic">
+                    <img src="../images/p01-0.jpg" alt="small">
+                </div>
+                <div class="p-title">
+                    Apple MacBook Pro 13.3英寸笔记本电脑 深空灰色 2018新款（四核八代i5 8G 256G固态硬盘 MR9Q2CH/A）
+                </div>
+                <div class="p-price">
+                    <span class="yuan">￥</span>13488.00
+                </div>
+            </a>
+        </li> -->
+    </ul>
+    <!-- footer 开始 -->
+    <script type="text/javascript" src="../js/lib/footer.js"></script>
+    <!-- footer 结束 -->
 </body>
+
 </html>
