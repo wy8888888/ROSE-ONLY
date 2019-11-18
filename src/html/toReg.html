@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="../style/public.css">
     <link rel="stylesheet" href="../style/comm.css">
     <link rel="stylesheet" href="../style/register.css">
-    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/require.js" data-main="../js/lib/app"></script>
+
 </head>
 
 <body>
     <!-- top -->
-    <script type="text/javascript"  src="../js/lib/top.js"></script>
+    <script type="text/javascript" src="../js/lib/top.js"></script>
     <!-- container 注册-->
     <div class="container">
         <div class="login_bj">
@@ -42,20 +44,21 @@
                     <!-- 手机号码 -->
                     <div class="register_nav">
                         <input type="text" id="username" name="username" maxlength="11" placeholder="请输入手机号"
-                            class="register_text" data-pass="">
+                            class="register_text">
                         <div class="register_nav_86" id="prefixC">+86</div>
                         <!-- 警告 -->
                         <div class="reminder validate">
-                            &nbsp;
+                                未通过验证，请重新输入
                         </div>
                     </div>
                     <div class="clear"></div>
                     <!-- 密码 -->
                     <div class="register_nav" style="margin-bottom:0;height:45px">
                         <input type="password" name="password" id="password" placeholder="6-16位数字或字母"
-                            class="register_password" data-pass="">
+                            class="register_password">
+                            <!-- 警告 -->
                         <div class="reminder validate">
-                            &nbsp;
+                            未通过验证，请重新输入
                         </div>
                     </div>
                     <!-- 会员政策 -->
@@ -65,13 +68,15 @@
                     </div>
                     <!-- 已有账号登录 -->
                     <div class="register_p">
-                        <p class="register_yyzh"><a href="https://orders.roseonly.com.cn/pcEntrance/tologin">已有账号</a>
+                        <p class="register_yyzh"><a href="./toLogin.html">已有账号</a>
                         </p>
 
                     </div>
                     <!-- 创建账号 -->
                     <div class="register_button">
-                        <a href="javascript:;" class="background2" name="regSubmitBtn" id="registerSubmit">创建账号</a>
+                        <!-- <a href="" class="background2 reg" name="regSubmitBtn" id="registerSubmit">创建账号</a> -->
+
+                        <input type="button" class="background2 reg" name="regSubmitBtn" id="registerSubmit" value="创建账号" disabled='disabled'>
                     </div>
                     <div class="register_bottom">
                         roseonly支持门店城市同城速递服务!
@@ -81,7 +86,7 @@
         </div>
     </div>
     <!-- footer 开始 -->
-    <script type="text/javascript"  src="../js/lib/footer.js"></script>
+    <script type="text/javascript" src="../js/lib/footer.js"></script>
     <!-- footer 结束 -->
 </body>
 

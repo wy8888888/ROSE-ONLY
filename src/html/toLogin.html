@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../style/public.css">
     <link rel="stylesheet" href="../style/comm.css">
     <link rel="stylesheet" href="../style/register.css">
-    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <!-- <script src="../js/lib/jquery.js"></script> -->
+    <script src="../js/lib/require.js" data-main="../js/lib/app"></script>
 </head>
 
 <body>
@@ -73,26 +74,27 @@
                         }
                     </script>
                     <div class="register_nav">
-                        <input type="text" placeholder="请输入手机号" name="username" id="username" maxlength="30"
+                        <input type="text" placeholder="请输入手机号" name="username" id="username" maxlength="11"
                             class="register_text text_p">
                         <div class="register_nav_86" id="prefixC"></div>
                         <div class="reminder validate">
-                            &nbsp;
+                            输入格式有误，请重新输入！
                         </div>
                     </div>
                     <div class="register_nav">
                         <input type="password" name="password" placeholder="请输入密码" id="password" maxlength="16"
                             class="register_password">
                         <div class="reminder validate">
-                            &nbsp;
+                            输入格式有误，请重新输入！
                         </div>
                     </div>
                     <div class="signin_a">
-                        <a href="javascript:toRegister();" class="signin_zc">快速注册</a>
+                        <a href="./toReg.html" class="signin_zc">快速注册</a>
                         <a href="https://orders.roseonly.com.cn/pcEntrance/tofindpass" class="signin_forget">忘记密码？</a>
                     </div>
 
-                    <a href="javascript:;" id="login-btn-submit" class="signin_button">登录</a>
+                    <!-- <a href="javascript:;" id="login-btn-submit" class="signin_button">登录</a> -->
+                    <input type="button" id="login-btn-submit reg" class="signin_button" value="登录"disabled="disabled">
                     <div class="register_bottom">
                         roseonly支持门店城市同城速递服务!
                     </div>

@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8080/1910/day36/shopcar";
+let baseUrl = "http://localhost:8080/rose-only.com";
 define(['jquery','cookie'],function($,cookie){
     return {
         render:function(){

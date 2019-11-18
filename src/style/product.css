@@ -39,12 +39,12 @@
 }
 .container .contain_details .main_jewel .jewel_paging .f1 {
   float: left;
-  background: url(../images/icon_left.jpg) no-repeat 0 19px;
+  background: url(../img/index/icon_left.jpg) no-repeat 0 19px;
 }
 .container .contain_details .main_jewel .jewel_paging .fr {
   float: left;
   text-align: right;
-  background: url(../images/icon_right.jpg) no-repeat 3px 19px;
+  background: url(../img/index/icon_right.jpg) no-repeat 3px 19px;
 }
 .container .contain_details .main_jewel .jewel_paging a {
   display: inline-block;
@@ -187,6 +187,7 @@
 .container .contain_details .details_img {
   display: table-cell;
   text-align: right;
+  padding-bottom: 40px;
 }
 .container .contain_details .details_img .contain_details img {
   display: block;

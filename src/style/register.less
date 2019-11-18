@@ -120,7 +120,7 @@
     .register_button {
         width: 290px;
         margin: 0px auto;
-        a{
+        .reg{
             width: 290px;
             height: 45px;
             line-height: 45px;
@@ -129,11 +129,13 @@
             color: #fff;
             font-size: 16px;
             letter-spacing: 2px;
-        }
-        .background2 {
             background: #c6c6c6;
-        }
+        }   
     }
+    .register_button:hover .reg{
+        background: #666;
+    }
+    
     .register_bottom {
         width: 395px;
         height: 58px;
@@ -183,6 +185,7 @@
             font-size: 14px;
             color: #000;
             width: 343px;
+            // cursor: pointer;
         }
     }
     .signin_button {
@@ -197,5 +200,10 @@
         font-size: 16px;
         text-indent: px;
         letter-spacing: 2px;
+        cursor: pointer;
     }
+  
+}
+.register_pass .register_nav .register_button:hover .signin_button{
+    background: #666;
 }

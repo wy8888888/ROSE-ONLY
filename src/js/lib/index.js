@@ -1,36 +1,40 @@
 let baseUrl = "http://localhost:8080/rose-only.com";
 
-define(['jquery'],function($){
+define(['jquery'], function ($) {
     return {
-        render:function(){
+        render: function () {
             $.ajax({
-                url:`${baseUrl}/lib/getall.php`,
-                type:'get',
-                dataType:'json',
-                success:function(res){
+                url: `${baseUrl}/lib/getall.php`,
+                type: 'get',
+                dataType: 'json',
+                success: function (res) {
                     console.log(res);
                     let temp = '';
-                    res.forEach(elm=>{
-                        let pic = JSON.parse(elm.pic);
-                        console.log(pic);
-                        temp+=`
+                    res.forEach(elm => {
+                        title=elm.p_title;
+                        title1=title.slice(0,4);
+                        title2=title.slice(7);
+                        temp += `
                             <li class="item">
-                                <a href="${baseUrl}/src/html/product.html?id=${elm.id}">
-                                    <div class="p-pic">
-                                        <img src="${baseUrl}/src/${pic[0].src}" alt="${pic[0].title}">
-                                    </div>
-                                    <div class="p-title">
-                                        ${elm.title}
-                                    </div>
-                                    <div class="p-price">
-                                        <span class="yuan">￥</span>${elm.price}
-                                    </div>
-                                </a>
-                            </li>`;
+                            <a href="${baseUrl}/src/html/product.html?id=${elm.p_id}">
+                                <div class="li_img">
+                                    <img class="lazy"
+                                        data-original="${baseUrl}/src/img/${elm.p_img}" alt="${elm.p_title}"
+                                        src="${baseUrl}/src/img/${elm.p_img}" alt="${elm.p_title}"
+                                        style="display: inline;">
+                                </div>
+                                <b class="f14">鲜花玫瑰 - ${title1}系列</b>
+                                <p class="f12">${title2}</p>
+                                <b class="f14">￥${elm.p_price}</b>
+                            </a>
+                        </li>`
                     });
-                    $('.list').append(temp);
+                    $('#productList').append(temp);
                 }
             })
         }
     }
+    render();
 });
+
+

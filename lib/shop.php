@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin:*'); // CORS
     include('./conn.php');
 
     $idList = $_REQUEST['idlist'];

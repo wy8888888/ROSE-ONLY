@@ -1,0 +1,19 @@
+define(['jquery','md5'],function($,md5){
+    return {
+        regEv:function(selector){
+            $('#login-btn-submit').on('click',function(){
+                $.ajax({
+                    url:'http://localhost:8080/rose-only.com/lib/login.php',
+                    type:'post',
+                    data:{
+                        username:$('#username').val(),
+                        password:$.md5($('#password').val()),
+                    },
+                    success:function(res){
+                        console.log(res);
+                    }
+                })
+            });
+        }
+    }
+})

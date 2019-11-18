@@ -9,45 +9,8 @@
     <link rel="stylesheet" href="../style/public.css">
     <link rel="stylesheet" href="../style/comm.css">
     <link rel="stylesheet" href="../style/index.css">
-    <script src="../../node_modules/jquery/dist/jquery.js" data-main="../js/main.index.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <script src="../js/lib/require.js" data-main="../js/main.index.js"></script>
 
-        .list {
-            list-style: none;
-            overflow: hidden;
-            margin: 50px;
-        }
-
-        .list>.item {
-            float: left;
-            width: 250px;
-            margin: 20px;
-            transition: margin-top .3s;
-        }
-
-        .p-price {
-            color: red;
-        }
-
-        .p-price>.yuan {
-            font-size: 14px;
-        }
-
-        .list>.item>a {
-            text-decoration: none;
-            display: block;
-        }
-
-        .list>.item:hover {
-            box-shadow: 3px 3px 3px #ccc;
-            margin-top: 17px;
-        }
-    </style>
 </head>
 
 <body>
@@ -69,8 +32,8 @@
             <input class="rose_select_input sortprice" value="" id="maxprice" min="0" placeholder="¥" type="number">
         </div>
         <ul class="ul" id="productList">
-            <li>
-                <a href="./product.html?id=">
+            <!-- <li>
+                <a href="./product.html?id='1'">
                     <div class="li_img">
                         <img class="lazy"
                             data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
@@ -82,26 +45,14 @@
                     <b class="f14">¥1999</b>
                     <div class="f12 oprice">价值¥2834</div>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
-    <ul class="list">
-        <!-- <li class="item">
-            <a href="product.html?id=1">
-                <div class="p-pic">
-                    <img src="../images/p01-0.jpg" alt="small">
-                </div>
-                <div class="p-title">
-                    Apple MacBook Pro 13.3英寸笔记本电脑 深空灰色 2018新款（四核八代i5 8G 256G固态硬盘 MR9Q2CH/A）
-                </div>
-                <div class="p-price">
-                    <span class="yuan">￥</span>13488.00
-                </div>
-            </a>
-        </li> -->
-    </ul>
     <!-- footer 开始 -->
     <script type="text/javascript" src="../js/lib/footer.js"></script>
+    <script >
+        
+    </script>
     <!-- footer 结束 -->
 </body>
 
