@@ -46,7 +46,7 @@ define(['jquery','md5'],function($,md5){
         regEv:function(selector){
             $('#registerSubmit').on('click',function(){
                 $.ajax({
-                    url:'http://localhost:8080/rose-only.com/lib/reg.php',
+                    url:'http://127.0.0.1:8080/rose-only.com/lib/reg.php',
                     type:'post',
                     dataType:'json',
                     data:{
@@ -54,23 +54,12 @@ define(['jquery','md5'],function($,md5){
                         password:$.md5($('#password').val()),
                     },
                     success:function(res){
-                        alert(1);
-                    }
-                })
-            });
-            $('#login-btn-submit').on('click',function(){
-                $.ajax({
-                    url:'http://localhost:8080/rose-only.com/lib/login.php',
-                    type:'post',
-                    data:{
-                        username:$('#username').val(),
-                        password:$.md5($('#password').val()),
-                    },
-                    success:function(res){
-                        console.log(res);
+                        alert("注册成功！");
+                        location.href('http://127.0.0.1:8080/rose-only.com/src/html/index.html');
                     }
                 })
             });
         }
+
     }
 })

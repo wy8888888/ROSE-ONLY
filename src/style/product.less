@@ -15,7 +15,7 @@
 
         .main_jewel {
             width: 530px;
-            overflow: hidden;
+            // overflow: hidden;
             float: left;
             margin-bottom: 60px;
             margin-top: 25px;
@@ -56,6 +56,11 @@
                     border: solid 1px #fff;
                     text-decoration: none;
                     margin-right: 7px;
+                    img {
+                        width: 55px;
+                        height: 55px;
+                        display: block;
+                    }
                 }
                 .img_selected {
                     border: solid 1px #7e7e7e;
@@ -207,4 +212,56 @@
 
     }
     
+}
+.image_reel1 {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.main_jewel {
+    position: relative;
+}
+
+.movebox {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: grey;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    cursor: move;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.big {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+
+.big_window {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: -200px;
+    top: 0px;
+    display: block;
+}
+
+.bigpic {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 40;
+}
+
+.show {
+    display: block;
 }

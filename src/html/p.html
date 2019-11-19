@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>roseonly官网</title>
+    <link rel="shortcut icon" href="../img/bg/t1.ico" />
+    <link rel="stylesheet" href="../style/public.css">
+    <link rel="stylesheet" href="../style/product.css">
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/require.js" data-main="../js/main.product"></script>
+    <style>
+        .image_reel1 {
+            position: relative;
+            width: 350px;
+            height: 350px;
+        }
+        .main_jewel{
+            position: relative;
+        }
+        .movebox {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: grey;
+            opacity: 0.4;
+            top: 0;
+            left: 0;
+            cursor: move;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        .big{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        .big_window {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: -200px;
+            top: 0px;
+            display: block;
+        }
+
+        .bigpic {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- top -->
+    <script src="../js/lib/top.js"></script>
+    <!-- container -->
+    <div class="container">
+        <div class="contain_details">
+            <!--轮播图-->
+            <div class="main_jewel">
+                <div class="jewel_window">
+                    <div class="image_reel1">
+                        <!-- 大图 -->
+                        <img id="detail_main_img" style="width: 350px;height: 350px;"
+                            src="https://www.roseonly.com.cn/upload/products/14975070890074624.png" border="0"
+                            alt="roseonly诺誓 花篮-情动" title="花篮-情动">
+                        <div class="movebox"></div>
+                    </div>
+
+                </div>
+                <!-- 放大镜大图 -->
+                <div class="big_window">
+                    <div class="big">
+                        <img src="https://www.roseonly.com.cn/upload/products/14975070887045553.jpg" alt="" class="bigpic">
+                    </div>
+                </div>
+
+                <div class="jewel_paging">
+                    <!-- 小图 -->
+                    <div class="f1" style="float:left"></div>
+                    <a href="javascript:;" rel="1" class="img_selected"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070890074624_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070890074624.png"></a>
+                    <a href="javascript:;" rel="2"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070891799813_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070891799813.png"></a>
+                    <a href="javascript:;" rel="3"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070893682888_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070893682888.png"></a>
+                    <a href="javascript:;" rel="4"><img class="detail_img" border="0"
+                            src="https://www.roseonly.com.cn/upload/products/14975070895406016_1.png"
+                            data-imgpath="https://www.roseonly.com.cn/upload/products/14975070895406016.png"></a>
+                    <div class="fr"></div>
+                </div>
+
+            </div>
+
+            <script>
+                $(function () {
+                    mainImg = $('#detail_main_img');//小图
+                    detailImg = $('.detail_img');//缩略图
+                    selected = $('.jewel_paging>a');//被选中的缩略图
+                    smallWindow = $('.image_reel1');//小图的window
+                    bigWindow = $('.big');//大图的window
+                    bigpic = $('.bigpic');//大图
+                    movebox = $('.movebox');//移动块
+
+                    // 遍历小图
+                    for (var i = 0; i < detailImg.length; i++) {
+                        var imgOne = detailImg[i];
+                        imgOne.onmouseover = function () {
+                            mainImg[0].src = this.src;
+                        }
+                    }
+                    //缩略图被选中效果
+                    detailImg.on('mouseover', function () {
+                        $('.jewel_paging>a').removeClass('img_selected');
+                        $(this).parent().addClass('img_selected');
+                    });
+
+                    //鼠标移入显示bigWindow
+                    smallWindow.on('mouseover', function () {
+                        movebox.addClass('show');
+                        bigWindow.addClass('show');
+                        bigpic[0].src = mainImg[0].src;
+                        // console.log(movebox.offset().height, movebox.offset().width);
+                        // console.log(movebox.offset().top);
+
+                        //鼠标移动
+                        smallWindow.on('mousemove', function (ev) {
+                            var top = ev.pageY - smallWindow.offset().top - (80 / 2);
+                            var left = ev.pageX - smallWindow.offset().left - (80 / 2);
+                            // console.log(ev.pageX, ev.pageY);
+                            // console.log(smallWindow.offset().top, smallWindow.offset().left);
+                            // console.log(movebox.offset().height, movebox.offset().width);
+
+
+                            // 移动比例计算
+                            var ratio = 500/350
+                            // console.log(bigpic.offset());
+                            console.log(ratio);
+
+                            if (left <= 0) {
+                                left = 0;
+                            } else if (left > smallWindow.offset().width - 80) {
+                                left = smallWindow.offset().width - 80 - 2;
+                            }
+
+                            if (top <= 0) {
+                                top = 0;
+                            } else if (top > smallWindow.offset().height - 80) {
+                                top = smallWindow.offset().height - 80 - 2;
+                            }
+
+                            movebox.css({ //修改定位
+                                left: left + 'px',
+                                top: top + 'px'
+                                
+                            });
+
+                            bigpic.css({
+                                left: -left * ratio + 'px',
+                                top: -top * ratio + 'px'
+                            });
+                        });
+                    });
+                    smallWindow.on('mouseout', function () {
+                        movebox.removeClass('show');
+                        bigWindow.removeClass('show');
+                    });
+                }); 
+            </script>
+            <!--轮播图 end-->
+            <!-- 商品信息 -->
+            <div class="details_num1_right">
+                <div class="right_tit">
+                    爱在满怀 - 花篮圆桶情动&nbsp;25支
+                </div>
+
+                <div class="right_pay">
+                    <span>价格 :</span>
+                    ¥1999
+                </div>
+
+                <div class="right_select">
+                    <span class="right_font_tit">数量：</span>
+                    <input type="text" value="1" class="right_number num" maxlength="2">
+                    <div class="right_u_d">
+                        <a href="javascript:void(0);" class="right_up"></a>
+                        <a href="javascript:void(0);" class="right_down"></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <a href="javascript:tobuy(3949);" class="button_bar1 unsold btn_buy" name="for99clickToBuy">立即购买</a>
+                <!-- 添加购物车 -->
+                <a href="javascript:tocart(3949);" class="button_bar2 unsold btn_buy add"
+                    name="for99clickToCar">加入购物车</a>
+                <a href="javascript:;" class="button_bar1" id="soldText" style="display:none"></a>
+
+                <div class="clear"></div>
+                <div class="fwcn_txt">服务承诺：官方正品&nbsp;&nbsp;&nbsp;免邮配送&nbsp;&nbsp;&nbsp;同城速递</div>
+            </div>
+            <!-- 产品参数 -->
+            <div class="div_details xq_description">
+                <h1 style="text-align: center;">产品详情</h1>
+            </div>
+            <div><img src="https://www.roseonly.com.cn/assets/roseonly/images/xq_08.png"></div>
+            <!--详情图文信息-->
+            <div class="div_details1">
+                <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/14975070887045553.jpg"
+                        alt="花篮-情动" title="花篮-情动"></div>
+            </div>
+            <div class="wxts"><img src="https://www.roseonly.com.cn/upload/syspic_new/14823775491713298.jpg"></div>
+            <!-- 详情图文信息end -->
+        </div>
+    </div>
+    <!-- footer  -->
+    <script src="../js/lib/footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>roseonly官网</title>
+    <link rel="shortcut icon" href="../img/bg/t1.ico" />
+    <link rel="stylesheet" href="../style/public.css">
+    <link rel="stylesheet" href="../style/comm.css">
+    <link rel="stylesheet" href="../style/index.css">
+    <script src="../js/lib/require.js" data-main="../js/main.index.js"></script>
+    <script src="../js/lib/jquery-1.11.0.min.js"></script>
+    <script src="../js/lib/jquery.lazyload.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $(".lazy").lazyload({
+                placeholder: "../img/bg/loding.png",
+                threshold : 8, // 设置阀值
+                effect: "fadeIn"
+            }); 
+        })
+        
+    </script>
+
+</head>
+
+<body>
+    <!-- top -->
+    <script type="text/javascript" src="../js/lib/top.js"></script>
+    <!-- container -->
+    <div class="container">
+        <div class="series"
+            style="background: url(../img/series/s1.jpg) no-repeat scroll 0 0;background-size:100% 100%;">
+        </div>
+        <div class="rose_select">
+            <a href="javascript:;" id="initpage" class="sort sort_add">综合</a>
+            <a href="javascript:;" id="salenum" class="sort">销量</a>
+            <a href="javascript:;" id="newest" class="sort">最新</a>
+            <a href="javascript:;" id="pay" data-flag="1" class="sort1">价格</a>
+
+            <input class="rose_select_input sortprice" value="" id="minprice" min="0" placeholder="¥" type="number">
+            <span class="rose_select_span">—</span>
+            <input class="rose_select_input sortprice" value="" id="maxprice" min="0" placeholder="¥" type="number">
+        </div>
+        <ul class="ul" id="productList">
+            <!-- <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li> -->
+        </ul>
+    </div>
+    <!-- footer 开始 -->
+    <script type="text/javascript" src="../js/lib/footer.js"></script>
+    <script>
+
+    </script>
+    <!-- footer 结束 -->
+</body>
+
+</html>

@@ -11,81 +11,140 @@ define(['jquery', 'cookie'], function ($, cookie) {
                     id: id
                 },
                 dataType: 'json',
+                
+                
                 success: function (res) {
-                    // let pic = JSON.parse(res.pic);
-                    console.log(res);
-                    
-                    // res.forEach(elm => {
+                    // console.log(res);
 
-                        title = res.p_title;
-                        console.log(title);
-                        title1 = title.slice(0, 4);//系列名
-                        title2 = title.slice(7);//商品名
-                        
-                        smallpic=res.p_smallpic.split(',');//转成数组
-                        console.log(smallpic);
-                        console.log(smallpic[1]);
+                    title = res.p_title;
+                    // console.log(title);
+                    title1 = title.slice(0, 4);//系列名
+                    title2 = title.slice(7);//商品名
+                    smallpic = res.p_smallpic.split(',');//转成数组 小图
 
-                        
-                        //左边商品信息
-                        let leftdetail = `
-                        <div class="jewel_window">
-                            <div class="image_reel1">
-                                <img id="detail_main_img" style="width: 350px;height: 350px;"
-                                    src="${res.p_smallpic.s1}" border="0"
-                                    alt="roseonly诺誓 花篮-情动" title="花篮-情动">
-                            </div>
-                        </div>
-                        <div class="jewel_paging">
-                            <div class="f1" style="float:left"></div>
-                            <a href="javascript:;" rel="1" class="img_selected"><img class="detail_img" border="0"
-                                    src="${res.p_smallpic.s1}"
-                                ></a>
-                            <a href="javascript:;" rel="2"><img class="detail_img" border="0"
-                                    src="${res.p_smallpic.s2}"
-                                    ></a>
-                            <a href="javascript:;" rel="3"><img class="detail_img" border="0"
-                                    src="${res.p_smallpic.s3}"
-                                    ></a>
-                            <a href="javascript:;" rel="4"><img class="detail_img" border="0"
-                                    src="${res.p_smallpic.s4}"
-                                    ></a>
-                            <div class="fr"></div>
-                        </div>
-                        `;
-
-                        // 右边商品信息
-                        let rightdetail = `
-                    <div class="right_tit">${res.p_title}</div>
-                    <div class="right_pay"><span>价格 :</span>
-                       ${res.p_price}
-                    </div>
-                    <div class="right_select">
-                        <span class="right_font_tit">数量：</span>
-                        <input type="text" value="1" class="right_number" maxlength="${res.p_num}">
-                        <div class="right_u_d">
-                            <a href="javascript:void(0);" class="right_up"></a>
-                            <a href="javascript:void(0);" class="right_down"></a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="javascript:tobuy(3949);" class="button_bar1 unsold btn_buy" name="for99clickToBuy">立即购买</a>
-                    <a href="javascript:tocart(3949);" class="button_bar2 unsold btn_buy" name="for99clickToCar">加入购物车</a>
-                    <a href="javascript:;" class="button_bar1" id="soldText" style="display:none"></a>
-                    <div class="clear"></div>
-                    <div class="fwcn_txt">服务承诺：官方正品&nbsp;&nbsp;&nbsp;免邮配送&nbsp;&nbsp;&nbsp;同城速递</div>
+                    //商品大图
+                    let bigPic=`
+                    <img id="detail_main_img" style="width: 350px;height: 350px;"
+                    src="${baseUrl}/src/img/${smallpic[0]}" border="0"
+                    alt="${title1}" title="${title2}">
+                    <div class="movebox"></div>
                     `;
 
-                        //商品详情
-                        let details = `
+                    //商品放大镜大图
+                    let bigpic=`
+                    <div class="big">
+                        <img src="" alt="" class="bigpic">
+                    </div>
+                    `;
+
+                    //商品小图
+                    let smallPicList=`
+                    <div class="f1" style="float:left"></div>
+                    <a href="javascript:;" rel="1" class="img_selected"><img class="detail_img" border="0"
+                            src="${baseUrl}/src/img/${smallpic[0]}"
+                            data-imgpath="${baseUrl}/src/img/${smallpic[0]}"></a>
+                    <a href="javascript:;" rel="2"><img class="detail_img" border="0"
+                            src="${baseUrl}/src/img/${smallpic[1]}"
+                            data-imgpath="${baseUrl}/src/img/${smallpic[1]}"></a>
+                    <a href="javascript:;" rel="3"><img class="detail_img" border="0"
+                            src="${baseUrl}/src/img/${smallpic[2]}"
+                            data-imgpath="${baseUrl}/src/img/${smallpic[2]}"></a>
+                    <a href="javascript:;" rel="4"><img class="detail_img" border="0"
+                            src="${baseUrl}/src/img/${smallpic[3]}"
+                            data-imgpath="${baseUrl}/src/img/${smallpic[3]}"></a>
+                    <div class="fr"></div>
+                    <script>
+                $(function () {
+                    mainImg = $('#detail_main_img');//小图
+                    detailImg = $('.detail_img');//缩略图
+                    selected = $('.jewel_paging>a');//被选中的缩略图
+                    smallWindow = $('.image_reel1');//小图的window
+                    bigWindow = $('.big');//大图的window
+                    bigpic = $('.bigpic');//大图
+                    movebox = $('.movebox');//移动块
+
+                    // 遍历小图
+                    for (var i = 0; i < detailImg.length; i++) {
+                        var imgOne = detailImg[i];
+                        imgOne.onmouseover = function () {
+                            mainImg[0].src = this.src;
+                        }
+                    }
+                    //缩略图被选中效果
+                    detailImg.on('mouseover', function () {
+                        $('.jewel_paging>a').removeClass('img_selected');
+                        $(this).parent().addClass('img_selected');
+                    });
+
+                    //鼠标移入显示bigWindow
+                    smallWindow.on('mouseover', function () {
+                        movebox.addClass('show');
+                        bigWindow.addClass('show');
+                        bigpic[0].src = mainImg[0].src;
+
+                        //鼠标移动
+                        smallWindow.on('mousemove', function (ev) {
+                            var top = ev.pageY - smallWindow.offset().top - (100 / 2);
+                            var left = ev.pageX - smallWindow.offset().left - (100 / 2);
+                            // console.log(ev.pageX, ev.pageY);
+                            // console.log(smallWindow.offset().top, smallWindow.offset().left);
+                            // console.log(movebox.offset().height, movebox.offset().width);
+
+                            // 移动比例计算
+                            var ratio = 600/350
+                            // console.log(bigpic.offset());
+
+                            if (left <= 0) {
+                                left = 0;
+                            } else if (left > 350 - 100) {
+                                left = 350 - 100 ;
+                            }
+
+                            if (top <= 0) {
+                                top = 0;
+                            } else if (top > 350 - 100) {
+                                top = 350- 100;
+                            }
+
+                            movebox.css({ //修改定位
+                                left: left + 'px',
+                                top: top + 'px'
+                                
+                            });
+
+                            bigpic.css({
+                                left: -left * ratio + 'px',
+                                top: -top * ratio + 'px'
+                            });
+                        });
+                    });
+                    smallWindow.on('mouseout', function () {
+                        movebox.removeClass('show');
+                        bigWindow.removeClass('show');
+                    });
+                }); 
+            </script>
+                    `;
+
+                    //商品信息
+                    let tit=`${title2}`;//商品名
+                    let series=`-${title1}系列`;//商品系列
+                    let price=`<span>价格：</span>￥${res.p_price}`;//商品价格
+
+                    //商品详情
+                    let details = `
                         <div class="details_img">
-                            <img src="${baseUrl}/src/img/${pic[i].p_detail}" alt="${pic[1].p_title}">
-                        </div>`
-                    // });
-                    $('.details_num1_right').append(rightdetail);
-                    callback && callback(res.id, res.price);
-                    $('.div_details1').append(details);
-                    $('.main_jewel').append(leftdetail);
+                            <img src="${baseUrl}/src/img/${res.p_detail}" alt="${res.p_title}">
+                        </div>`;
+
+                    $('.image_reel1').append(bigPic);//添加大图
+                    $('.big_window').append(bigpic);//添加放大镜大图
+                    $('.jewel_paging').append(smallPicList);//添加四张小图
+                    $('.right_tit').append(tit);//添加商品标题
+                    $('.right_pay').append(price);//添加商品价格
+                    $('.right_xxc').append(series);
+                    $('.div_details1').append(details);//添加商品详情
+                    callback && callback(res.id, res.price);//callback
                 }
             })
         },

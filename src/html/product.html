@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>roseonly官网</title>
+    <link rel="shortcut icon" href="../img/bg/t1.ico" />
     <link rel="stylesheet" href="../style/public.css">
     <link rel="stylesheet" href="../style/product.css">
     <script src="../js/lib/jquery.min.js"></script>
-    <script src="../js/lib/jquery.js" data-main="../js/main.product"></script>
+    <script src="../js/lib/require.js" data-main="../js/main.product"></script>
 </head>
 
 <body>
@@ -20,16 +21,22 @@
         <div class="contain_details">
             <!--轮播图-->
             <div class="main_jewel">
-                <!-- <div class="jewel_window">
+                <div class="jewel_window">
                     <div class="image_reel1">
-                        <img id="detail_main_img" style="width: 350px;height: 350px;"
+                        <!-- 大图 -->
+                        <!-- <img id="detail_main_img" style="width: 350px;height: 350px;"
                             src="https://www.roseonly.com.cn/upload/products/14975070890074624.png" border="0"
-                            alt="roseonly诺誓 花篮-情动" title="花篮-情动">
+                            alt="roseonly诺誓 花篮-情动" title="花篮-情动"> -->
                     </div>
                 </div>
-
+                <div class="big_window">
+                    <!-- <div class="big">
+                            <img src="" alt="" class="bigpic">
+                        </div> -->
+                </div>
                 <div class="jewel_paging">
-                    <div class="f1" style="float:left"></div>
+                    <!-- 小图 -->
+                    <!-- <div class="f1" style="float:left"></div>
                     <a href="javascript:;" rel="1" class="img_selected"><img class="detail_img" border="0"
                             src="https://www.roseonly.com.cn/upload/products/14975070890074624_1.png"
                             data-imgpath="https://www.roseonly.com.cn/upload/products/14975070890074624.png"></a>
@@ -42,10 +49,10 @@
                     <a href="javascript:;" rel="4"><img class="detail_img" border="0"
                             src="https://www.roseonly.com.cn/upload/products/14975070895406016_1.png"
                             data-imgpath="https://www.roseonly.com.cn/upload/products/14975070895406016.png"></a>
-                    <div class="fr"></div>
-                </div> -->
+                    <div class="fr"></div> -->
+                </div>
             </div>
-            <script>
+            <!-- <script>
                 $(function () {
                     mainImg = $('#detail_main_img');
                     detailImg = $('.detail_img');
@@ -63,58 +70,52 @@
                         $(this).parent().addClass('img_selected');
                     });
                 }); 
-            </script>
+            </script> -->
             <!--轮播图 end-->
+            <!-- 商品信息 -->
             <div class="details_num1_right">
-                <!-- <div class="right_tit">爱在满怀 - 花篮圆桶情动&nbsp;25支</div>
-
-                <div class="right_pay"><span>价格 :</span>
-                    ¥1999
+                <div class="right_tit">
+                    <!-- 爱在满怀 - 花篮圆桶情动&nbsp;25支 -->
+                </div>
+                <div class="right_xxc"></div>
+                <div class="right_pay">
+                    <!-- <span>价格 :</span>
+                    ¥1999 -->
                 </div>
 
                 <div class="right_select">
                     <span class="right_font_tit">数量：</span>
-                    <input type="text" value="1" class="right_number" maxlength="2">
+                    <input type="text" value="1" class="right_number num" maxlength="2">
                     <div class="right_u_d">
                         <a href="javascript:void(0);" class="right_up"></a>
                         <a href="javascript:void(0);" class="right_down"></a>
                     </div>
                     <div class="clear"></div>
                 </div>
-
                 <a href="javascript:tobuy(3949);" class="button_bar1 unsold btn_buy" name="for99clickToBuy">立即购买</a>
-                <a href="javascript:tocart(3949);" class="button_bar2 unsold btn_buy" name="for99clickToCar">加入购物车</a>
+                <!-- 添加购物车 -->
+                <a href="javascript:tocart(3949);" class="button_bar2 unsold btn_buy add"
+                    name="for99clickToCar">加入购物车</a>
                 <a href="javascript:;" class="button_bar1" id="soldText" style="display:none"></a>
 
                 <div class="clear"></div>
-                <div class="fwcn_txt">服务承诺：官方正品&nbsp;&nbsp;&nbsp;免邮配送&nbsp;&nbsp;&nbsp;同城速递</div> -->
+                <div class="fwcn_txt">服务承诺：官方正品&nbsp;&nbsp;&nbsp;免邮配送&nbsp;&nbsp;&nbsp;同城速递</div>
             </div>
-
             <!-- 产品参数 -->
             <div class="div_details xq_description">
                 <h1 style="text-align: center;">产品详情</h1>
             </div>
-
-
-
             <div><img src="https://www.roseonly.com.cn/assets/roseonly/images/xq_08.png"></div>
             <!--详情图文信息-->
-
-
             <div class="div_details1">
                 <!-- <div class="details_img"><img src="https://www.roseonly.com.cn/upload/products/14975070887045553.jpg"
                         alt="花篮-情动" title="花篮-情动"></div> -->
             </div>
-            
-
-
-            <!--<div class="wxts"><img src="https://www.roseonly.com.cn/upload/syspic_new/14823775491713298.jpg"></div>-->
-            <!--详情图文信息end-->
-
-
+            <div class="wxts"><img src="https://www.roseonly.com.cn/upload/syspic_new/14823775491713298.jpg"></div>
+            <!-- 详情图文信息end -->
         </div>
     </div>
-    <!-- footer -->
+    <!-- footer  -->
     <script src="../js/lib/footer.js"></script>
 </body>
 

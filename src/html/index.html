@@ -6,54 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>roseonly官网</title>
+    <link rel="shortcut icon" href="../img/bg/t1.ico" />
     <link rel="stylesheet" href="../style/public.css">
     <link rel="stylesheet" href="../style/comm.css">
-    <link rel="stylesheet" href="../style/index.css">
-    <script src="../js/lib/require.js" data-main="../js/main.index.js"></script>
+    <link rel="stylesheet" href="../style/lunbo.css">
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lunbo.js"></script>
+    <style>
+        .container img {
+            display: block;
+            width: 100%;
+        }
 
+        .ul li {
+            float: left;
+        }
+    </style>
 </head>
+l
 
 <body>
-    <!-- top -->
-    <script type="text/javascript"  src="../js/lib/top.js"></script>
-    <!-- container -->
+    <a id="top" href=""></a>
+    <!-- top 开始-->
+    <script src="../js/lib/top.js"></script>
+    <!-- top 结束 -->
+    <div class="main_top"></div>
+    <!-- container 开始-->
     <div class="container">
-        <div class="series"
-            style="background: url(../img/series/s1.jpg) no-repeat scroll 0 0;background-size:100% 100%;">
+        <!-- 轮播图 -->
+        <div class="main_view">
+            <div id="slider">
+                <div>
+                    <img src="../img/lunbo/lunbo1.jpg" alt="">
+                    <img src="../img/lunbo/lunbo2.jpg" alt="">
+                    <img src="../img/lunbo/lunbo3.jpg" alt="">
+                    <img src="../img/lunbo/lunbo4.jpg" alt="">
+                    <img src="../img/lunbo/lunbo5.png" alt="">
+                    <img src="../img/lunbo/lunbo6.png" alt="">
+                </div>
+                <span><b>&lt;</b></span>
+                <span><b>&gt;</b></span>
+            </div>
+            <script>
+                $(function () {
+                    $('#slider').slider();
+                });
+            </script>
         </div>
-        <div class="rose_select">
-            <a href="javascript:;" id="initpage" class="sort sort_add">综合</a>
-            <a href="javascript:;" id="salenum" class="sort">销量</a>
-            <a href="javascript:;" id="newest" class="sort">最新</a>
-            <a href="javascript:;" id="pay" data-flag="1" class="sort1">价格</a>
-
-            <input class="rose_select_input sortprice" value="" id="minprice" min="0" placeholder="¥" type="number">
-            <span class="rose_select_span">—</span>
-            <input class="rose_select_input sortprice" value="" id="maxprice" min="0" placeholder="¥" type="number">
+        <!-- 轮播结束 -->
+        <!-- 品牌推荐 -->
+        <div class="brand">
+            <ul class="ul">
+                <li style="margin:10px 0;">
+                    <a href=""><img src="../img/index/brand1.jpg" alt=""></a>
+                    <img src="../img/index/brand2.jpg" alt="">
+                    <a href=""><img src="../img/index/brand3.jpg" alt=""></a>
+                </li>
+                <li><a href=""><img src="../img/index/brand4.jpg" alt=""></a></li>
+            </ul>
+            <ul class="ul">
+                <li><a href=""><img src="../img/index/yonghengzhenai.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jingdianyongxu.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jingdianyongxu2.jpg" alt=""></a></li>
+            </ul>
+            <ul class="ul">
+                <li><a href=""><img src="../img/index/dangyuexingzuo.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/mingxingtongkuan.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/xinxinxiangxi.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/hunlitongkuan.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/hunlitongkuan2.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguigongzai.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/quanshiai.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jingdianyongxu3.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/jewelry.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/shengchenshi.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/lock.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguisanxiang.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguixiangfen.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/meiguishipin.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/gaoduandingzhi.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img/index/giftcard.jpg" alt=""></a></li>
+            </ul>
         </div>
-        <ul class="ul" id="productList">
-            <!-- <li>
-                <a href="./product.html?id='1'">
-                    <div class="li_img">
-                        <img class="lazy"
-                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
-                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
-                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
-                    </div>
-                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
-                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
-                    <b class="f14">¥1999</b>
-                    <div class="f12 oprice">价值¥2834</div>
-                </a>
-            </li> -->
-        </ul>
+        <!-- 品牌结束 -->
     </div>
+    <!-- container 结束-->
+
     <!-- footer 开始 -->
     <script type="text/javascript" src="../js/lib/footer.js"></script>
-    <script >
-        
-    </script>
     <!-- footer 结束 -->
+
 </body>
 
 </html>

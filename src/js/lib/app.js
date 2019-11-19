@@ -1,4 +1,4 @@
-
+//注册
 //配置
 require.config({
     paths:{ // 模块和路径

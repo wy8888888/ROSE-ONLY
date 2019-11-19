@@ -12,9 +12,9 @@ header('Access-Control-Allow-Origin:*'); // CORS
     $res = $mysqli->query($sql);
 
     if($res->num_rows>0){
-        echo '登陆成功！';
+        echo '{"msg":"登陆成功！"}';
     }else{
-        echo '用户名或密码错误,请重新输入！';
+        echo '{"msg":"用户名或密码错误,请重新输入!"}';
     }
 
     $mysqli->close();

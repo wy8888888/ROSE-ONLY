@@ -26,8 +26,8 @@ header('Access-Control-Allow-Origin:*'); // CORS
     // 当使用query函数执行插入操作的时候  返回的是插入的行数
     $res = $mysqli->query($insertSql);
     if($res){
-        echo '<script>alert('注册成功');location.href(./shouye.html);</script>';
-        // echo '{"msg":"注册成功！","url":"http://127.0.0.1:8080/rose-only.com/src/html/shouye.html"}';
+        // echo '<script>alert('注册成功');location.href(./shouye.html);</script>';
+        echo '{"msg":"注册成功！","url":"http://127.0.0.1:8080/rose-only.com/src/html/shouye.html"}';
     }
     $mysqli->close();
     // echo $insertSql;

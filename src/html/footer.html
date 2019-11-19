@@ -48,3 +48,66 @@
     </div>
 </footer>
 <!-- footer 结束 -->
+<!-- 返回首页 -->
+<div id="back-to-top" style="display: block;">
+    <a class="go_top" href="#top"><img src="https://www.roseonly.com.cn/upload/syspic_new/14703637041003761.svg">
+    </a>
+</div>
+<!-- 客服 -->
+<div id="zhichiBtnBox">
+    <a id="zhichiBtn">
+        <img src="https://www.roseonly.com.cn/upload/syspic_new/14703636967439422.svg">
+    </a>
+    <div class="mes_content" style="display: none;">
+        <div class="mes_icon">
+            <div class="tel_sj"><img src="https://www.roseonly.com.cn/upload/syspic_new/14769441969842358.png" alt="">
+            </div>
+            <div class="tel_icon">
+                <p class="tel_txt">联系电话</p>
+                <p class="tel_phone">400-1314-520</p>
+            </div>
+            <div class="tel_line"></div>
+            <div class="zxkf_txt">
+                <a id="btn_onlineZhichi">在线客服</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 二维码 -->
+<div id="ewmBox">
+    <a id="ewm">
+        <img src="https://www.roseonly.com.cn/upload/syspic_new/14945591270622918.svg">
+    </a>
+    <div class="ewm_content" style="display: none;"></div>
+</div>
+<script type="text/javascript">
+    $("#zhichiBtnBox").hover(function () {
+        $(".mes_content").css({
+            display: 'block'
+        })
+    }, function () {
+        $(".mes_content").css({
+            display: 'none'
+        })
+    });
+    $("#ewmBox").hover(function () {
+        $(".ewm_content").css({
+            display: 'block'
+        })
+    }, function () {
+        $(".ewm_content").css({
+            display: 'none'
+        })
+    });
+</script>
+<script>
+    $(function () {
+        $('.go_top').on('click', function () {
+            // 元素距离页面顶部的高度
+            var top = $('#top').offset().top;
+            $('html,body').animate({
+                scrollTop: top
+            }, 600);
+        });
+    });
+</script>

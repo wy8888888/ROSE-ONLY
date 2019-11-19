@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin:*'); // CORS
 
     $id = $_REQUEST['id'];
 
-    $sql = "select * from product where id='$id'";
+    $sql = "select * from product where p_id = $id";
 
     $res = $mysqli->query($sql);
 
