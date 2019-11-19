@@ -7,23 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>roseonly官网</title>
     <link rel="shortcut icon" href="../img/bg/t1.ico" />
+    <link rel="stylesheet" href="../js/lib/jquery.js" type="text/javascript">
     <link rel="stylesheet" href="../style/public.css">
     <link rel="stylesheet" href="../style/comm.css">
     <link rel="stylesheet" href="../style/index.css">
+    <!-- <link rel="stylesheet" href="../js/lib/require.js"> -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/jquery.lazyload.js" type="text/javascript"></script>
     <script src="../js/lib/require.js" data-main="../js/main.index.js"></script>
-    <script src="../js/lib/jquery-1.11.0.min.js"></script>
+    <!-- <script src="../js/lib/require.js" data-main="../js/main.lazylode.js"></script> -->
+    <!-- <script src="../lib/jquery-1.11.0.min.js"></script> -->
+
     <script src="../js/lib/jquery.lazyload.js"></script>
+
     <script type="text/javascript" charset="utf-8">
         $(function () {
-            $(".lazy").lazyload({
-                placeholder: "../img/bg/loding.png",
-                threshold : 8, // 设置阀值
-                effect: "fadeIn"
-            }); 
-        })
-        
-    </script>
 
+            $("img.lazy").lazyload({
+                effect: "fadeIn",
+                placeholder: "../img/bg/loding.png",
+                threshold: -180
+
+            });
+
+        });
+
+    </script>
 </head>
 
 <body>
@@ -45,11 +54,12 @@
             <input class="rose_select_input sortprice" value="" id="maxprice" min="0" placeholder="¥" type="number">
         </div>
         <ul class="ul" id="productList">
-            <!-- <li>
+            <li>
                 <a href="./product.html?id='1'">
                     <div class="li_img">
                         <img class="lazy"
                             data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
                             src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
                             alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
                     </div>
@@ -58,15 +68,160 @@
                     <b class="f14">¥1999</b>
                     <div class="f12 oprice">价值¥2834</div>
                 </a>
-            </li> -->
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html?id='1'">
+                    <div class="li_img">
+                        <img class="lazy"
+                            data-original="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            width="260" height="260"
+                            src="https://www.roseonly.com.cn/upload/products/15531615024928288.png"
+                            alt="roseonly 诺誓 玫瑰礼盒 - 玫瑰公仔" style="display: inline;">
+                    </div>
+                    <b class="f14">玫瑰礼盒 - 玫瑰公仔系列</b>
+                    <p class="f12">项圈狗手链与甜心狗&nbsp;&nbsp;</p>
+                    <b class="f14">¥1999</b>
+                    <div class="f12 oprice">价值¥2834</div>
+                </a>
+            </li>
+
         </ul>
     </div>
+
     <!-- footer 开始 -->
     <script type="text/javascript" src="../js/lib/footer.js"></script>
-    <script>
-
-    </script>
     <!-- footer 结束 -->
+    <!-- 图片懒加载 -->
+    <!-- <script src="../js/lib/jquery.lazyload.js"  type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $("img.lazy").lazyload({
+                placeholder: "../img/bg/loding.png",
+                threshold: 8, // 设置阀值
+                effect: "fadeIn"
+            });
+        })();
+    </script> -->
 </body>
 
 </html>
