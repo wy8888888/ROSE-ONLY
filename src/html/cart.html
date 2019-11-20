@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>roseonly官网</title>
+    <title>我的购物车</title>
     <link rel="shortcut icon" href="../img/bg/t1.ico" />
     <link rel="stylesheet" href="../style/public.css">
     <link rel="stylesheet" href="../style/comm.css">
     <link rel="stylesheet" href="../style/cart.css">
-    <script src="../js/lib/jquery.js" data-main="../js/main.shopcar"></script>
+    <script src="../js/lib/jquery.js"></script>
+    <!-- <script src="../js/lib/require.js" data-main="../js/main.shopcar"></script> -->
 </head>
 
 <body>
@@ -31,11 +32,12 @@
                         <tr class="shopping_cart_title">
                             <td width="40">&nbsp;</td>
                             <td width="110">品牌</td>
-                            <td width="490">商品名称</td>
+                            <td width="450">商品名称</td>
                             <td width="120">单价</td>
                             <td width="13"></td>
                             <td width="60">数量</td>
                             <td width="13"></td>
+                            <td width="120">小计</td>
                             <td>操作</td>
                         </tr>
                         <tr height="120" class="wg_cart_list" data-price="1999.0" id="cart_tr_335" data-id="335"
@@ -62,19 +64,74 @@
                                 <input type="text" value="1" id="cart_count_335" maxlength="4" data-num="40"
                                     class="shopping_cart_sl">
                             </td>
-                            <td align="right"><a href="javascript:void(0);" class="cart_up"><img border="0"
-                                        class="jia_jian" alt=""
-                                        src="../img/index/cart03.png"></a></td>
-                            <td><a href="javascript:void(0)" class="cart_del">删除</a></td>
+                            <td align="right"><a href="javascript:;" class="cart_up"><img border="0" class="jia_jian"
+                                        alt="" src="../img/index/cart03.png"></a></td>
+                            <td class>¥1999</td>
+                            <td><a href="javascript:" class="cart_del">删除</a></td>
                         </tr>
-                        <!-- 显示赠品 -->
+                        <tr height="120" class="wg_cart_list" data-price="1999.0" id="cart_tr_335" data-id="335"
+                            data-maxnum="40">
+                            <td><input type="checkbox" name="ck_carno" data-num="1" id="ck_carno335" value="335"
+                                    checked="checked"> </td>
+                            <td>
+                                roseonly</td>
+                            <td>
+                                <img src="https://www.roseonly.com.cn/upload/products/15717297469879459.png"
+                                    class="shopping_cart_img" alt="产品图" style="cursor:pointer;"
+                                    onclick="window.open('http://www.roseonly.com.cn/item/335.html')">
+                                <div class="shopping_cart_name">
+                                    <label for="ck_carno335">
+                                        星座经典-天蝎座-天蝎守护色-40支</label>
+                                </div>
+                            </td>
+                            <td class="td_price_335">¥1999.0</td>
+                            <td>
+                                <a href="javascript:" class="cart_down"><img border="0" class="jia_jian" alt=""
+                                        src="../img/index/cart02.png"></a>
+                            </td>
+                            <td>
+                                <input type="text" value="3" id="cart_count_335" maxlength="10" data-num="40"
+                                    class="shopping_cart_sl">
+                            </td>
+                            <td align="right"><a href="javascript:;" class="cart_up"><img border="0" class="jia_jian"
+                                        alt="" src="../img/index/cart03.png"></a></td>
+                            <td class="td_sum">￥1314</td>
+                            <td><a href="javascript:" class="cart_del">删除</a></td>
+                        </tr> -->
+
+                        <script>
+                            $(function () {
+                                $('.cart_up').on('click', function () {
+                                    // console.log(this);
+                                    var num = $(this).parent().parent().find('.shopping_cart_sl').val();
+                                    var maxnum = $(this).parent().parent().find('.shopping_cart_sl').attr('maxlength');
+                                    console.log(maxnum);
+                                    if (num < maxnum){
+                                         num=Number(num)+1;
+                                         console.log(num);
+                                    }
+                                    else num = maxnum;
+                                    $(this).parent().parent().find('.shopping_cart_sl').val([num]);
+                                    // console.log(num);
+                                });
+                                $('.cart_down').on('click', function () {
+                                    var num = $(this).parent().parent().find('.shopping_cart_sl').val();
+                                    var maxnum = $(this).parent().parent().find('.shopping_cart_sl').attr('maxlength');
+                                    if (num > 1) num--;
+                                    else num = 1;
+                                    $(this).parent().parent().find('.shopping_cart_sl').val([num]);
+                                    console.log(num);
+                                });
+
+                            })
+                        </script>
                     </tbody>
                 </table>
                 <!-- 全选 -->
                 <div class="sel_all"><input type="checkbox" id="ck_all" checked="checked"><label for="ck_all">全选</label>
                 </div>
-                <!-- 合计 -->
-                <div class="cart_total">合计：¥<font id="cart_total">1999.0</font>
+                合计
+                <div class="cart_total">合计：¥<font id="cart_total"></font>
                     <input type="button" class="cart_button1" value="去结算" id="cart_pay">
                 </div>
 

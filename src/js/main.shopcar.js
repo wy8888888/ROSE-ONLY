@@ -1,6 +1,6 @@
 require.config({
     paths:{
-        jquery:"./jquery.min",
+        jquery:"./lib/jquery.min",
         cookie:"./lib/cookie",
         shopcar:"./lib/shopcar"
     },

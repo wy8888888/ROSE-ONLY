@@ -1,16 +1,16 @@
 @charset 'utf-8';
 .order {
-  width: 962px;
+  width: 1000px;
   margin: 0 auto 30px;
   min-height: 500px;
 }
 .order .shopping {
-  width: 962px;
+  width: 1000px;
   margin: 0 auto;
   font-size: 14px;
 }
 .order .shopping .shop-a {
-  width: 962px;
+  width: 1000px;
   height: 70px;
   border-bottom: solid 1px #414141;
 }
@@ -34,7 +34,7 @@
   background: url(../img/index/cart01.png) no-repeat scroll 0 42px;
 }
 .order .shopping .shopping_cart {
-  width: 962px;
+  width: 1000px;
   border-collapse: collapse;
   font-size: 16px;
   color: #414141;

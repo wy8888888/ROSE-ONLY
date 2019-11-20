@@ -229,7 +229,7 @@
   position: absolute;
   right: -200px;
   top: 0px;
-  display: block;
+  display: none;
 }
 .bigpic {
   width: 600px;

@@ -137,14 +137,50 @@ define(['jquery', 'cookie'], function ($, cookie) {
                             <img src="${baseUrl}/src/img/${res.p_detail}" alt="${res.p_title}">
                         </div>`;
 
+                    //加入购物车数量
+                    let cartnum=`
+                    <span class="right_font_tit">数量：</span>
+                    <input type="text" value="1" class="right_number num" maxlength="${res.p_num}">
+                    <div class="right_u_d">
+                        <a href="javascript:;" class="right_up"></a>
+                        <a href="javascript:;" class="right_down"></a>
+                    </div>
+                    <script>
+                        $(function () {
+                            let num = $('.num').val();
+                            let maxnum = $('.num').attr('maxlength');
+                            $('.right_up').on('click', function () {
+                                if (num < maxnum) num++;
+                                else{
+                                    num = maxnum;
+                                    $(".right_up").off();
+                                }
+                                $('.num').val([num]);
+                            });
+                            $('.right_down').on('click', function () {
+                                if (num > 1) num--;
+                                else{
+                                    num = 1;
+                                    $(".right_down").off();
+                                }
+                                $('.num').val([num]);
+                            });
+                        })
+                    </script>
+                    <div class="clear"></div>
+                    `;
+
                     $('.image_reel1').append(bigPic);//添加大图
                     $('.big_window').append(bigpic);//添加放大镜大图
                     $('.jewel_paging').append(smallPicList);//添加四张小图
                     $('.right_tit').append(tit);//添加商品标题
                     $('.right_pay').append(price);//添加商品价格
-                    $('.right_xxc').append(series);
+                    $('.right_xxc').append(series);//添加商品系列名
                     $('.div_details1').append(details);//添加商品详情
-                    callback && callback(res.id, res.price);//callback
+
+                    $(".right_select").append(cartnum);//添加加入购物车数量
+                    callback && callback(res.p_id, res.p_price);//callback
+                    console.log(res.p_id,res.p_price);
                 }
             })
         },
@@ -152,18 +188,18 @@ define(['jquery', 'cookie'], function ($, cookie) {
             let shop = cookie.get('shop'); // 获取cookie数据 判断是否存在
             // 如果有cookie  修改cookie
             // 如果有cookie  添加cookie
-
             let product = {
                 id: id,
                 price: price,
                 num: num
             };
-
             if (shop) {
+                alert('添加成功！')
                 shop = JSON.parse(shop);
                 if (shop.some(elm => elm.id == id)) {
                     shop.forEach(elm => {
-                        elm.id == id ? elm.num = num : null;
+                        elm.id == id ? elm.num = Number(num)+Number(elm.num) : null;
+                        console.log(shop);
                     });
                 } else {
                     shop.push(product);
@@ -171,8 +207,17 @@ define(['jquery', 'cookie'], function ($, cookie) {
             } else {
                 shop = []; // 购物车没有内容 新建一个购物车
                 shop.push(product); //将商品放入购物车
+                console.log(shop);
+                alert('添加成功！')
             }
+            let cartNum=document.getElementById('cartNum');
+            let sum=shop.length;
+            cartNum.innerHTML='('+sum+')';
+            console.log(cartNum);
             cookie.set('shop', JSON.stringify(shop), 1);
+            // console.log(shop);
+            let idList = shop.map(elm=>elm.id).join(); //取id并且用,连接
+            console.log(idList);
         }
     }
 });

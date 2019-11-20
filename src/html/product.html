@@ -84,18 +84,39 @@
                 </div>
 
                 <div class="right_select">
-                    <span class="right_font_tit">数量：</span>
-                    <input type="text" value="1" class="right_number num" maxlength="2">
+                    <!-- <span class="right_font_tit">数量：</span>
+                    <input type="text" value="1" class="right_number num" maxlength="40">
                     <div class="right_u_d">
-                        <a href="javascript:void(0);" class="right_up"></a>
-                        <a href="javascript:void(0);" class="right_down"></a>
+                        <a href="javascript:;" class="right_up"></a>
+                        <a href="javascript:;" class="right_down"></a>
                     </div>
-                    <div class="clear"></div>
+                    <script>
+                        $(function () {
+                            let num = $('.num').val();
+                            let maxnum = $('.num').attr('maxlength');
+                            $('.right_up').on('click', function () {
+                                if (num < maxnum) num++;
+                                else{
+                                    num = maxnum;
+                                    $(".right_up").off();
+                                }
+                                $('.num').val([num]);
+                            });
+                            $('.right_down').on('click', function () {
+                                if (num > 1) num--;
+                                else{
+                                    num = 1;
+                                    $(".right_down").off();
+                                }
+                                $('.num').val([num]);
+                            });
+                        })
+                    </script>
+                    <div class="clear"></div> -->
                 </div>
-                <a href="javascript:tobuy(3949);" class="button_bar1 unsold btn_buy" name="for99clickToBuy">立即购买</a>
+                <a href="javascript:;" class="button_bar1 unsold btn_buy" name="for99clickToBuy">立即购买</a>
                 <!-- 添加购物车 -->
-                <a href="javascript:tocart(3949);" class="button_bar2 unsold btn_buy add"
-                    name="for99clickToCar">加入购物车</a>
+                <input type="button" class="button_bar2 unsold btn_buy add" name="for99clickToCar" value="加入购物车">
                 <a href="javascript:;" class="button_bar1" id="soldText" style="display:none"></a>
 
                 <div class="clear"></div>

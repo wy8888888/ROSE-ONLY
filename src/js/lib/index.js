@@ -1,6 +1,6 @@
 let baseUrl = "http://localhost:8080/rose-only.com";
 
-define(['jquery'], function ($) {
+define(['jquery', 'cookie'], function ($, cookie) {
     return {
         render: function () {
             $.ajax({
@@ -11,9 +11,9 @@ define(['jquery'], function ($) {
                     // console.log(res);
                     let temp = '';
                     res.forEach(elm => {
-                        title=elm.p_title;
-                        title1=title.slice(0,4);
-                        title2=title.slice(7);
+                        title = elm.p_title;
+                        title1 = title.slice(0, 4);
+                        title2 = title.slice(7);
                         temp += `
                             <li class="item">
                             <a href="${baseUrl}/src/html/product.html?id=${elm.p_id}">

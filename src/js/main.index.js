@@ -1,7 +1,8 @@
 require.config({
     paths:{
         jquery:"./lib/jquery",
-        index:"./lib/index"
+        index:"./lib/index",
+        cookie:"./lib/cookie"
     },
     shim:{}
 });

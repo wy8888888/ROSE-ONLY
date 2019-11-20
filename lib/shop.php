@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin:*'); // CORS
 
     $idList = $_REQUEST['idlist'];
 
-    $sql = "select * from product where id in ($idList)";
+    $sql = "SELECT * FROM `product` WHERE `p_id` IN ($idList)";
 
     $res = $mysqli->query($sql);
 
@@ -13,6 +13,8 @@ header('Access-Control-Allow-Origin:*'); // CORS
     while($row = $res->fetch_assoc()){
         array_push($arr,$row);
     }
+
+    echo $mysqli->error;
 
     $json = json_encode($arr);
 
