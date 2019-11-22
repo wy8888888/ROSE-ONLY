@@ -11,7 +11,70 @@
     <link rel="stylesheet" href="../style/comm.css">
     <link rel="stylesheet" href="../style/cart.css">
     <script src="../js/lib/jquery.js"></script>
-    <!-- <script src="../js/lib/require.js" data-main="../js/main.shopcar"></script> -->
+    <script src="../js/lib/require.js" data-main="../js/main.shopcar"></script>
+    <style>
+        .my_model {
+            position: fixed;
+            display: none;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -200px;
+            z-index: 9999;
+            width: 360px;
+            height: 120px;
+            border: 1px solid #aeaeae;
+            border-radius: 3px;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .my_model .title {
+            font-size: 14px;
+            color: #3c3c3c;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .my_model .title .closeModel {
+            float: right;
+            cursor: pointer;
+        }
+
+        .my_model p {
+            line-height: 16px;
+        }
+
+        .my_model .opBtn {
+            margin-top: 20px;
+        }
+
+        .my_model .opBtn a {
+            width: 58px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            -webkit-border-radius: 1px;
+            -moz-border-radius: 1px;
+            -ms-border-radius: 1px;
+            border-radius: 1px;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .my_model .dialog-sure {
+            background: #52a0e5;
+            color: #fff;
+            border: 1px solid #52a0e5;
+        }
+
+        .my_model .dialog-close {
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            color: #3c3c3c;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,7 +88,7 @@
             <div class="shopping">
                 <div class="shop-a">
                     <div class="shop-left" style="width:800px">我的购物车</div>
-                    <a href="javascript:void(0);" class="shop-right" id="cart_del_all">清空购物车</a>
+                    <a href="javascript:;" class="shop-right" id="cart_del_all">清空购物车</a>
                 </div>
                 <table class="shopping_cart" border="0" cellspacing="0" cellpadding="0" data-shopid="0">
                     <tbody>
@@ -40,7 +103,7 @@
                             <td width="120">小计</td>
                             <td>操作</td>
                         </tr>
-                        <tr height="120" class="wg_cart_list" data-price="1999.0" id="cart_tr_335" data-id="335"
+                        <!-- <tr height="120" class="wg_cart_list" data-price="1999.0" id="cart_tr_335" data-id="335"
                             data-maxnum="40">
                             <td><input type="checkbox" name="ck_carno" data-num="1" id="ck_carno335" value="335"
                                     checked="checked"> </td>
@@ -97,45 +160,50 @@
                                         alt="" src="../img/index/cart03.png"></a></td>
                             <td class="td_sum">￥1314</td>
                             <td><a href="javascript:" class="cart_del">删除</a></td>
+                        </tr> --> -->
+                        <!-- <tr height="120" class="wg_cart_list" data-price="6999.0" id="cart_tr_5308" data-id="5308"
+                            data-maxnum="9">
+                            <td><input type="checkbox" name="ck_carno" data-num="1" id="ck_carno5308" value="5308"
+                                    checked="checked"> </td>
+                            <td>
+                                roseonly</td>
+                            <td>
+                                <img src="https://www.roseonly.com.cn/upload/products/15719079651199047.png"
+                                    class="shopping_cart_img" alt="产品图" style="cursor:pointer;"
+                                    onclick="window.open('http://www.roseonly.com.cn/item/5308.html')">
+                                <div class="shopping_cart_name">
+                                    <label for="ck_carno5308">
+                                        公仔-熊乐手-嫣红-300mm</label>
+                                </div>
+                            </td>
+                            <td class="td_price_5308">¥6999.0</td>
+
+                            <td>
+                                <a href="javascript:void(0)" class="cart_down"><img border="0" class="jia_jian" alt=""
+                                        src="https://orders.roseonly.com.cn/resources/images/cart02.png"></a>
+                            </td>
+                            <td>
+                                <input type="text" value="1" id="cart_count_5308" maxlength="4" data-num="9"
+                                    class="shopping_cart_sl">
+                            </td>
+                            <td align="right"><a href="javascript:void(0);" class="cart_up"><img border="0"
+                                        class="jia_jian" alt=""
+                                        src="https://orders.roseonly.com.cn/resources/images/cart03.png"></a></td>
+                            <td class="td_sum">1999</td>
+                            <td><a href="javascript:void(0)" class="cart_del">删除</a></td>
                         </tr> -->
-
-                        <script>
-                            $(function () {
-                                $('.cart_up').on('click', function () {
-                                    // console.log(this);
-                                    var num = $(this).parent().parent().find('.shopping_cart_sl').val();
-                                    var maxnum = $(this).parent().parent().find('.shopping_cart_sl').attr('maxlength');
-                                    console.log(maxnum);
-                                    if (num < maxnum){
-                                         num=Number(num)+1;
-                                         console.log(num);
-                                    }
-                                    else num = maxnum;
-                                    $(this).parent().parent().find('.shopping_cart_sl').val([num]);
-                                    // console.log(num);
-                                });
-                                $('.cart_down').on('click', function () {
-                                    var num = $(this).parent().parent().find('.shopping_cart_sl').val();
-                                    var maxnum = $(this).parent().parent().find('.shopping_cart_sl').attr('maxlength');
-                                    if (num > 1) num--;
-                                    else num = 1;
-                                    $(this).parent().parent().find('.shopping_cart_sl').val([num]);
-                                    console.log(num);
-                                });
-
-                            })
-                        </script>
                     </tbody>
                 </table>
                 <!-- 全选 -->
-                <div class="sel_all"><input type="checkbox" id="ck_all" checked="checked"><label for="ck_all">全选</label>
+                <div class="sel_all"><input type="checkbox" id="ck_all"><label for="ck_all"
+                        class="ck_alllabel">全选</label>
                 </div>
-                合计
+
                 <div class="cart_total">合计：¥<font id="cart_total"></font>
+                    <div style="position: absolute;left: -100px;top: 0;">共<span class="cart_totalNum"
+                            style="color: coral;">1</span>件</div>
                     <input type="button" class="cart_button1" value="去结算" id="cart_pay">
                 </div>
-
-
             </div>
             <div class="clear"></div>
             <div class="help-right">
@@ -152,6 +220,94 @@
     <!-- footer -->
     <script src="../js/lib/footer.js"></script>
     <!-- footer end -->
+
+    <!-- script -->
+    <!-- check全选 -->
+    <script>
+        // $('#ck_all').on('click', function () {
+        //     let item = $('.ck_carno');
+        //     console.log(item);
+        //     if ($('#ck_all').attr('checked', 'checked')) {
+        //         console.log('xuanzhong');
+        //         item.attr('checked', 'checked');
+        //     } else if ($('#ck_all').attr('checked', '')) {
+        //         console.log('meixuanzhong ');
+        //         item.removeAttr('checked');
+        //     }
+        // })
+
+        $('#ck_all').on('click', function () {
+            var checkbox = $('.ck_carno')
+            checkbox.prop('checked', !checkbox.prop('checked'));
+        });
+    </script>
+    <!-- 计算购物车金额 -->
+    <!-- <script>
+        $(document).ready(function () {
+            //点击增加按钮触发事件
+            $(".plus").click(function () {
+                var num = $(this).parent().children("span");
+                //单品数量增加
+                num.text(parseInt(num.text()) + 1);
+                //商品总数增加
+                var totalNum = parseInt($(".totalNum").text());
+                totalNum++
+                $(".totalNum").text(totalNum);
+                //计算总价
+                var goods_price = parseInt($(this).parent().parent().children(".goods_price").text());
+                $(".totalPrice").text(parseInt($(".totalPrice").text()) + goods_price);
+            });
+
+            //点击减少按钮触发事件
+            $(".minus").click(function () {
+                var num = $(this).parent().children("span");
+                if (parseInt(num.text())) {
+                    num.text(parseInt(num.text()) - 1);
+                    var totalNum = parseInt($(".totalNum").text());
+                    totalNum--
+                    $(".totalNum").text(totalNum);
+                    var goods_price = parseInt($(this).parent().parent().children(".goods_price").text());
+                    $(".totalPrice").text(parseInt($(".totalPrice").text()) - goods_price);
+                } else {
+                    num.text("0");
+                }
+            });
+        });
+    </script> -->
+    <section class="model_bg"></section>
+    <section class="my_model">
+        <p class="title">删除商品<span class="closeModel">X</span></p>
+        <p>您确认要删除该商品吗？</p>
+        <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;"
+                class="dialog-close">关闭</a></div>
+    </section>
+    <script>
+        $(function () {
+            console.log(1);
+            $('.cart_del').on('click', function () {
+                console.log(1);
+                $('.model_bg').fadeIn(300);
+                $('.my_model').fadeIn(300);
+                
+            });
+            //关闭模态框
+            $('.closeModel').click(function () {
+                    closeM();
+                });
+                $('.dialog-close').click(function () {
+                    closeM();
+                });
+                function closeM() {
+                    $('.model_bg').fadeOut(300);
+                    $('.my_model').fadeOut(300);
+                }
+                //确定按钮，移除商品
+                $('.dialog-sure').click(function () {
+                    closeM();
+
+                })
+        })
+    </script>
 </body>
 
 </html>

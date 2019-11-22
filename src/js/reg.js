@@ -55,7 +55,11 @@ define(['jquery','md5'],function($,md5){
                     },
                     success:function(res){
                         alert("注册成功！");
-                        location.href('http://127.0.0.1:8080/rose-only.com/src/html/index.html');
+                        window.location.href = './toLogin.html';
+                    },
+                    error:function () {
+                        alert("该号码已注册，请登录或重新注册！");
+                        window.location.href = './toReg.html';
                     }
                 })
             });

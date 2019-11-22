@@ -13,5 +13,8 @@ require(['jquery','product'],function($,product){
         $('.add').on('click',function(){
             product.addItem(id,price,$('.num').val());
         });
+        $('.toBuy').on('click',function(){
+            product.toBuy(id,price,$('.num').val());
+        })
     });
 });

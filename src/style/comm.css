@@ -57,13 +57,6 @@
   display: block;
   background-image: url(../img/index/index-logo.png);
 }
-.menus2 {
-  opacity: 0;
-}
-#nav > li:hover > .menus2 {
-  display: block;
-  opacity: 1;
-}
 .main_top {
   width: 100%;
   height: 360px;

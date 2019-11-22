@@ -59,6 +59,7 @@ define(['jquery', 'cookie'], function ($, cookie) {
                     detailImg = $('.detail_img');//缩略图
                     selected = $('.jewel_paging>a');//被选中的缩略图
                     smallWindow = $('.image_reel1');//小图的window
+                    Window=$('.big_window');
                     bigWindow = $('.big');//大图的window
                     bigpic = $('.bigpic');//大图
                     movebox = $('.movebox');//移动块
@@ -79,6 +80,7 @@ define(['jquery', 'cookie'], function ($, cookie) {
                     //鼠标移入显示bigWindow
                     smallWindow.on('mouseover', function () {
                         movebox.addClass('show');
+                        Window.addClass('show');
                         bigWindow.addClass('show');
                         bigpic[0].src = mainImg[0].src;
 
@@ -120,6 +122,7 @@ define(['jquery', 'cookie'], function ($, cookie) {
                     });
                     smallWindow.on('mouseout', function () {
                         movebox.removeClass('show');
+                        Window.removeClass('show');
                         bigWindow.removeClass('show');
                     });
                 }); 
@@ -218,6 +221,41 @@ define(['jquery', 'cookie'], function ($, cookie) {
             // console.log(shop);
             let idList = shop.map(elm=>elm.id).join(); //取id并且用,连接
             console.log(idList);
+        },
+        toBuy:function (id, price, num) {
+            let shop = cookie.get('shop'); // 获取cookie数据 判断是否存在
+            // 如果有cookie  修改cookie
+            // 如果有cookie  添加cookie
+            let product = {
+                id: id,
+                price: price,
+                num: num
+            };
+            if (shop) {
+                shop = JSON.parse(shop);
+                if (shop.some(elm => elm.id == id)) {
+                    shop.forEach(elm => {
+                        elm.id == id ? elm.num = Number(num)+Number(elm.num) : null;
+                        console.log(shop);
+                    });
+                } else {
+                    shop.push(product);
+                }
+            } else {
+                shop = []; // 购物车没有内容 新建一个购物车
+                shop.push(product); //将商品放入购物车
+                console.log(shop);
+            }
+            let cartNum=document.getElementById('cartNum');
+            let sum=shop.length;
+            cartNum.innerHTML='('+sum+')';
+            console.log(cartNum);
+            cookie.set('shop', JSON.stringify(shop), 1);
+            // console.log(shop);
+            let idList = shop.map(elm=>elm.id).join(); //取id并且用,连接
+            console.log(idList);
+            window.location.href = './cart.html';
+
         }
     }
 });

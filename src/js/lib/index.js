@@ -1,6 +1,6 @@
 let baseUrl = "http://localhost:8080/rose-only.com";
 
-define(['jquery', 'cookie'], function ($, cookie) {
+define(['jquery', 'cookie','lazy','lazyloding'], function ($, cookie,lazy) {
     return {
         render: function () {
             $.ajax({
@@ -29,6 +29,15 @@ define(['jquery', 'cookie'], function ($, cookie) {
                         </li>`
                     });
                     $('#productList').append(temp);
+                    $(function () {
+
+                        $("img.lazy").lazyload({
+                            effect: "fadeIn",
+                            placeholder: "../img/bg/loding.png",
+                            threshold: 100
+                        });
+                    });
+
                 }
             })
         }

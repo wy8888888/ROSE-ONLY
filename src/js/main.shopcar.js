@@ -8,5 +8,9 @@ require.config({
 });
 
 require(['jquery','shopcar'],function($,shopcar){
-    shopcar.render();
+    shopcar.render(function (id,price) {
+        $('.cart_del').hover(function () {
+            shopcar.del(id,price,$('.num').val());
+        })
+    });
 });

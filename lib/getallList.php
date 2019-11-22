@@ -1,7 +1,6 @@
 <?php
 header('content-type:text/html;charset=utf-8');
     include('./conn.php');
-
     $currentPage = $_REQUEST['page']; //当前的页数
     $pagesize = 10; //每一次查询的数据数量
     $startRow = ($currentPage-1)*$pagesize;

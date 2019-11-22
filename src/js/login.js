@@ -41,7 +41,7 @@ define(['jquery','md5'],function($,md5){
         if (allPass.length == 2) {
            //提交数据
            console.log('remove');
-           $('#registerSubmit').removeAttr('disabled');
+           $('#login-btn-submit').removeAttr('disabled');
            console.log('2');
         }
     }
@@ -51,14 +51,20 @@ define(['jquery','md5'],function($,md5){
                 $.ajax({
                     url:'http://127.0.0.1:8080/rose-only.com/lib/login.php',
                     type:'post',
+                    dataType:'json',
                     data:{
                         username:$('#username').val(),
                         password:$.md5($('#password').val()),
                     },
                     success:function(res){
                         console.log(res);
-                        alert('登录成功！');
+                        alert(res.msg);
+                        window.location.href = res.url;
+                    },
+                    error:function (error) {
+                        console.error();
                     }
+                    
                 })
             });
         }

@@ -1,4 +1,23 @@
 <!-- 头部 -->
+<script type="text/javascript">
+    $(function () {
+        console.log($(".head>.right"));
+        $(window).scroll(function () {
+            if ($(document).scrollTop() >= 120) {
+                // console.log($(document).scrollTop);
+                $(".nav-container").addClass("nav_cur").slideDown();
+                $(".head>.right").attr('style','left: 1259.6px;position: fixed;top: -38px;height: 36px;z-index: 700;right: 0px;').slideDown();
+                $('#nav>li').attr('style','margin: 0px 11px;');
+                $('.logo_f_cur').attr('style','left: 129.6px; display: block;');
+            }else{
+                $(".nav-container").removeClass("nav_cur").slideDown();
+                $(".head>.right").removeAttr("style");
+                $('#nav>li').removeAttr('style');
+                $('.logo_f_cur').attr('style','left: 129.6px; display: none;');
+            }
+        })
+    })
+</script>
 <header id="header">
     <!--  -->
     <div class="head">
@@ -56,7 +75,7 @@
             <li id="cartNum" class="cartNum">(0)</li>
             <li class="h_dlzc_line"></li>
             <!-- 地址 -->
-            <li style="float:right"><a href="地址" target="_blank" class="std"></a></li>
+            <li style="float:right"><a href="" target="_blank" class="std"></a></li>
         </ul>
     </div>
 </header>
@@ -66,6 +85,7 @@
 <div class="logo-container">
     <a href="index1.html" class="logo_nbtn"></a>
 </div>
+<div class="logo_f_cur" style="left: 129.6px; display: none;"><a href="./index.html"></a></div>
 <!-- logo结束 -->
 
 <!-- 导航栏 开始-->
