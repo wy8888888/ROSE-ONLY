@@ -7,10 +7,7 @@ require.config({
     shim:{}
 });
 
-require(['jquery','shopcar'],function($,shopcar){
-    shopcar.render(function (id,price) {
-        $('.cart_del').hover(function () {
-            shopcar.del(id,price,$('.num').val());
-        })
-    });
+require(['jquery','shopcar','cookie'],function($,shopcar,cookie){
+    shopcar.render(); 
+    // shopcar.click();
 });

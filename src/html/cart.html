@@ -199,9 +199,9 @@
                         class="ck_alllabel">全选</label>
                 </div>
 
-                <div class="cart_total">合计：¥<font id="cart_total"></font>
+                <div class="cart_total">合计：¥<font id="cart_total">0</font>
                     <div style="position: absolute;left: -100px;top: 0;">共<span class="cart_totalNum"
-                            style="color: coral;">1</span>件</div>
+                            style="color: coral;">0</span>件</div>
                     <input type="button" class="cart_button1" value="去结算" id="cart_pay">
                 </div>
             </div>
@@ -237,7 +237,7 @@
         // })
 
         $('#ck_all').on('click', function () {
-            var checkbox = $('.ck_carno')
+            var checkbox = $('.ck_carno');
             checkbox.prop('checked', !checkbox.prop('checked'));
         });
     </script>
@@ -283,29 +283,29 @@
     </section>
     <script>
         $(function () {
-            console.log(1);
-            $('.cart_del').on('click', function () {
-                console.log(1);
-                $('.model_bg').fadeIn(300);
-                $('.my_model').fadeIn(300);
-                
-            });
+            // console.log(1);
+            // $('.cart_del').on('click', function () {
+            //     console.log(1);
+            //     $('.model_bg').fadeIn(300);
+            //     $('.my_model').fadeIn(300);
+
+            // });
             //关闭模态框
             $('.closeModel').click(function () {
-                    closeM();
-                });
-                $('.dialog-close').click(function () {
-                    closeM();
-                });
-                function closeM() {
-                    $('.model_bg').fadeOut(300);
-                    $('.my_model').fadeOut(300);
-                }
-                //确定按钮，移除商品
-                $('.dialog-sure').click(function () {
-                    closeM();
+                closeM();
+            });
+            $('.dialog-close').click(function () {
+                closeM();
+            });
+            function closeM() {
+                $('.model_bg').fadeOut(300);
+                $('.my_model').fadeOut(300);
+            }
+            //确定按钮，移除商品
+            $('.dialog-sure').click(function () {
+                closeM();
 
-                })
+            })
         })
     </script>
 </body>
